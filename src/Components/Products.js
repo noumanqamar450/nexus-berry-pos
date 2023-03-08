@@ -7,8 +7,11 @@ const Products = (props) => {
     const [count, setCount] = useState(1)
     const [total, setTotal] = useState(props.price)
     
-    useEffect(() => {
+    const totalSet = () => {
         setTotal(priceTotal(props.price, count))
+    } 
+    useEffect(() => {
+        totalSet()
     })
     
 
