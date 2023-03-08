@@ -6,6 +6,7 @@ import { productIncrease, productDecrease, priceTotal } from '../Lib/Pos'
 const ProductSet = (props) => {
     const [count, setCount] = useState(1)
     const [total, setTotal] = useState(props.price)
+    const [singleCheckbox, setSingleCheckbox] = useState(false)
 
     const priceSet = () => {
         setTotal(priceTotal(props.price, count))
@@ -67,7 +68,11 @@ const ProductSet = (props) => {
                 <Form.Check
                     type='checkbox'
                     className="float-start mt-2"
-                    checked={props.checkbox}
+                    checked={props.checkbox || singleCheckbox ? true : false}
+                    onChange={() => {
+                        singleCheckbox ? setSingleCheckbox(false) : setSingleCheckbox(true)
+                    }}
+                    
                 />                    
                 <Button variant="danger" className="float-end" size="sm"><Trash3Fill /> </Button>
                 </Card.Body>

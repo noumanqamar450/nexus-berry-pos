@@ -36,16 +36,16 @@ const Calculation = () => {
     return (
         <>
             <div className="cal-handle">
-                {checkbox && <Button variant='success' className="float-start"><Trash3Fill /> </Button>}
                 <Form.Check
                     type='checkbox'
-                    className="float-start mt-2 mx-2"
+                    className="float-start mt-2"
                     label='Select All'
-                    onChange={(e)=>{
+                    onChange={()=>{
                         checkbox ? setCheckbox(false) : setCheckbox(true)
-                        console.log(e.target.value)
                     }}
+                    checked={checkbox}
                 /> 
+                {checkbox && <Button variant='success' className="float-start mx-2"><Trash3Fill /> </Button>}
                 <Button variant='primary' className="float-end" onClick={handleShow}><PlusCircleFill /> </Button>
                 <Form.Select className="float-end w-auto mx-1">
                     <option>Select Customer</option>
