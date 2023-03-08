@@ -7,7 +7,7 @@ function POSApp() {
   return (
     <>
       <Row>
-        <Col md={8}>
+        <Col md={8} className="pb-5">
           <ProductList/>
         </Col>
         <Col md={4}>
